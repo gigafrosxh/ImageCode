@@ -2,6 +2,11 @@ const express = require("express");
 const bodyParser = require("body-parser");
 
 const app = express();
+
+// JSON Parsing aktivieren
+app.use(express.json());
+
+// Optional: auch urlencoded, falls gebraucht
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post("/collect", (req, res) => {
